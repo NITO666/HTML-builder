@@ -1,0 +1,6 @@
+let fs = require('fs')
+let path = require('path')
+let pathDirecrory = path.join(__dirname,'/text.txt')
+let rS = fs.createReadStream(pathDirecrory, 'utf-8')
+rS.on('data', c => console.log(c))
+rS.on('error', error => console.log('Error', error.message))
